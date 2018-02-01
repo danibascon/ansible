@@ -1,2 +1,3 @@
 - include: tree/tree.yml
 - include: nginx/main.yml
+- include: php-fpm/main.yml

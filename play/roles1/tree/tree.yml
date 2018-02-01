@@ -1,0 +1,10 @@
+---
+- hosts: nodo1
+  become: yes
+  tasks:
+    - name: install tree
+      apt:
+        name: tree
+        update_cache: yes
+
+

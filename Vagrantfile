@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
     nodo1.vm.hostname = "nodo1"
     nodo1.vm.network :private_network, ip: "192.168.26.1"
     nodo1.vm.provision "ansible" do |ansible|
-	ansible.playbook = "play/roles1/nodo1.yml"
+	ansible.playbook = "playbooks/roles1/nodo1.yml"
     end
    end
 
@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
     nodo2.vm.hostname = "nodo2"
     nodo2.vm.network :private_network, ip: "192.168.26.2"
     nodo2.vm.provision "ansible" do |ansible|
-        ansible.playbook = "play/roles2/nodo2.yml"
+        ansible.playbook = "playbooks/roles2/nodo2.yml"
     end
  end
 end

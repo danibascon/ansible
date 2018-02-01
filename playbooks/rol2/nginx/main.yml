@@ -1,5 +1,5 @@
 ---
-- hosts: nodo1
+- hosts: nodo2
   become: yes
   tasks:
     - name: Install nginx

@@ -1,5 +1,5 @@
 ---
-- hosts: nodo2
+- hosts: nodo1
   become: yes
   tasks:
     - name: install tree

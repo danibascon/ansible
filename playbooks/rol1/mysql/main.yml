@@ -3,13 +3,22 @@
   become: yes
   tasks:
     - name: Install mysql
-      apt: name=mariadb-server state=latest update_cache=yes
+      apt: name={{ item }} state=present
+      with_items:
+       - mysql-server
+       - python-mysqldb
 
     - name: Configuracion mysql
       template: 
-           src=my.cnf 
+           src=50-server.cnf 
            dest=/etc/mysql/mariadb.conf.d/50-server.cnf
 
+    - name: Creando base de datos
+      mysql_db: name=bascon state=present
+
+    - name: Creando usuario
+      mysql_user: name=bascon password=bascon priv=bascon.*:ALL host=% state=present
+  
     - name: restart mysql
       service: name=mysql state=restarted
 

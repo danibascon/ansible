@@ -1,0 +1,11 @@
+---
+- hosts: nodo1
+  become: yes
+  tasks:
+    - name: Install mysql
+      apt: name={{ item }} state=present
+      with_items:
+       - mysql-server
+
+
+https://es.wordpress.org/wordpress-4.9.2-es_ES.zip

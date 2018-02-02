@@ -2,9 +2,9 @@
 - hosts: nodo2
   become: yes
   tasks:
-    - name: install tree
+    - name: install unzip
       apt:
-        name: tree
+        name: unzip
         update_cache: yes
 
 

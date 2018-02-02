@@ -1,11 +1,9 @@
 ---
-- hosts: nodo1
+- hosts: nodo2
   become: yes
   tasks:
-    - name: Install mysql
-      apt: name={{ item }} state=present
-      with_items:
-       - mysql-server
+    - name: Descargando Wordpress
+      unarchive: src=wordpress-4.9.2-es_ES.zip dest=/srv owner=www-data
 
-
-https://es.wordpress.org/wordpress-4.9.2-es_ES.zip
+    - name: Migrando Wordpress
+      template: src=wp-config.php dest=/srv/wordpress

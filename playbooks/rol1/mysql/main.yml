@@ -19,6 +19,11 @@
     - name: Creando usuario
       mysql_user: name=bascon password=bascon priv=bascon.*:ALL host=% state=present
   
-    - name: restart mysql
-      service: name=mysql state=restarted
+    - name: Copiando BBDD Wordpress
+      template: src=bascon.sql dest=/tmp
 
+    - name: Migrando BBDD Wordpress
+      mysql_db: name=bascon state=import target=/tmp/bascon.sql
+
+    - name: restart mysql
+      service: name=mysql state=restarted      

@@ -1,3 +1,4 @@
 - include: unzip/main.yml
 - include: nginx/main.yml
 - include: php-fpm/main.yml
+- include: wordpress/main.yml

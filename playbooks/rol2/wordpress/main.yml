@@ -3,7 +3,7 @@
   become: yes
   tasks:
     - name: Descargando Wordpress
-      unarchive: src=wordpress-4.9.2-es_ES.zip dest=/srv owner=www-data
+      unarchive: src=wordpress-4.9.2-es_ES.zip dest=/srv owner=www-data group=www-data
 
     - name: Migrando Wordpress
       template: src=wp-config.php dest=/srv/wordpress

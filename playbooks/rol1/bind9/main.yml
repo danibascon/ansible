@@ -1,0 +1,14 @@
+---
+- hosts: nodo1
+  become: yes
+  tasks:
+     - name: Install bind9
+       action: apt name={{ item }} state=installed update_cache=yes
+       with_items:
+         - bind9
+         - dnsutils
+
+     - name: Configurando bind9
+       copy: src=named.conf.local dest=/etc/bind/
+       copy: src=db.danibascon.gonzalonazareno.org dest=/var/cache/bind/
+       coy: src=resolv.conf dest=/etc/resolv.conf

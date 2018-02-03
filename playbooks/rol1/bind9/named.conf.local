@@ -1,0 +1,5 @@
+zone "danibascon.gonzalonazareno.org"
+{
+type master;
+file "/var/cache/bind/db.danibascon.gonzalonazareno.org";
+};

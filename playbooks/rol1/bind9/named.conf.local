@@ -1,5 +1,4 @@
-zone "danibascon.gonzalonazareno.org"
-{
+zone "iesgn.org" {
 type master;
-file "/var/cache/bind/db.danibascon.gonzalonazareno.org";
+file "/var/cache/bind/db.iesgn.org";
 };

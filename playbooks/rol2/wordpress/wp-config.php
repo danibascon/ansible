@@ -25,7 +25,7 @@ define('DB_USER', 'bascon');
 define('DB_PASSWORD', 'bascon');
 
 /** Host de MySQL (es muy probable que no necesites cambiarlo) */
-define('DB_HOST', '192.168.26.1');
+define('DB_HOST', '192.168.26.101');
 
 /** Codificación de caracteres para la base de datos. */
 define('DB_CHARSET', 'utf8mb4');

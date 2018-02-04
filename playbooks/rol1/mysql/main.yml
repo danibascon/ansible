@@ -20,10 +20,10 @@
       mysql_user: name=bascon password=bascon priv=bascon.*:ALL host=% state=present
   
     - name: Copiando BBDD Wordpress
-      template: src=bascon.sql dest=/tmp
+      template: src=bascon.sql dest=/home/vagrant
 
     - name: Migrando BBDD Wordpress
-      mysql_db: name=bascon state=import target=/tmp/bascon.sql
+      mysql_db: name=bascon state=import target=/home/vagrant/bascon.sql
 
     - name: restart mysql
       service: name=mysql state=restarted      

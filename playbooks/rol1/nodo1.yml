@@ -1,2 +1,2 @@
-- include: bind9/mail.yml
+- include: bind9/main.yml
 - include: mysql/main.yml

@@ -9,6 +9,10 @@
          - dnsutils
 
      - name: Configurando bind9
-       copy: src=named.conf.local dest=/etc/bind/
-       copy: src=db.danibascon.gonzalonazareno.org dest=/var/cache/bind/
-       coy: src=resolv.conf dest=/etc/resolv.conf
+       copy: src=named.conf.local dest=/etc/bind/named.conf.local
+
+     - name: Copiando zona directa
+       template: src=db.iesgn.org dest=/var/cache/bind/db.iesgn.org
+
+     - name: Reiniciando bind9
+       service: name=bind9 state=restarted

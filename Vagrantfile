@@ -5,7 +5,6 @@ Vagrant.configure("2") do |config|
   config.vm.define :nodo1 do |nodo1|
     nodo1.vm.box = "debian/stretch64"
     nodo1.vm.hostname = "nodo1"
-#    nodo1.vm.network :public_network,:bridge=>"wlp2s0"
     nodo1.vm.network :private_network, ip: "192.168.26.101", netmask: "255.255.255.0"
     nodo1.vm.network :private_network, ip: "192.26.26.101", netmask: "255.255.255.0",   
 	virtualbox__intnet: "redinterna"
